@@ -1,93 +1,44 @@
-<<<<<<< HEAD
-# Data files and directories common in repo root
-datasets/
-logs/
-*.h5
-results/
-temp/
-test/
-
-=======
-# Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
-*.jpg
-*.jpeg
-*.png
-*.bmp
-*.tif
-*.tiff
-*.heic
-*.JPG
-*.JPEG
-*.PNG
-*.BMP
-*.TIF
-*.TIFF
-*.HEIC
-*.mp4
-*.mov
-*.MOV
-*.avi
-*.data
-*.json
-*.cfg
-!setup.cfg
-!cfg/yolov3*.cfg
-
+# Repo-specific DockerIgnore -------------------------------------------------------------------------------------------
+.git
+.cache
+.idea
+runs
+output
+coco
 storage.googleapis.com
-runs/*
-data/*
-data/images/*
-!data/*.yaml
-!data/hyps
-!data/scripts
-!data/images
-!data/images/zidane.jpg
-!data/images/bus.jpg
-!data/*.sh
 
-results*.csv
-
-# Datasets -------------------------------------------------------------------------------------------------------------
-coco/
-coco128/
-VOC/
-
-# MATLAB GitIgnore -----------------------------------------------------------------------------------------------------
-*.m~
-*.mat
-!targets*.mat
+data/samples/*
+**/results*.csv
+*.jpg
 
 # Neural Network weights -----------------------------------------------------------------------------------------------
-*.weights
-*.pt
-*.pb
-*.onnx
-*.engine
-*.mlmodel
-*.mlpackage
-*.torchscript
-*.tflite
-*.h5
+**/*.pt
+**/*.pth
+**/*.onnx
+**/*.engine
+**/*.mlmodel
+**/*.torchscript
+**/*.torchscript.pt
+**/*.tflite
+**/*.h5
+**/*.pb
 *_saved_model/
 *_web_model/
 *_openvino_model/
-*_paddle_model/
-darknet53.conv.74
-yolov3-tiny.conv.15
+
+# Below Copied From .gitignore -----------------------------------------------------------------------------------------
+# Below Copied From .gitignore -----------------------------------------------------------------------------------------
+
 
 # GitHub Python GitIgnore ----------------------------------------------------------------------------------------------
->>>>>>> 79c4c31d16692e188fb30de92f81f005b5b4f6c0
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-<<<<<<< HEAD
-=======
 # C extensions
 *.so
 
->>>>>>> 79c4c31d16692e188fb30de92f81f005b5b4f6c0
 # Distribution / packaging
 .Python
 env/
@@ -104,15 +55,9 @@ sdist/
 var/
 wheels/
 *.egg-info/
-<<<<<<< HEAD
+wandb/
 .installed.cfg
 *.egg
-
-=======
-/wandb/
-.installed.cfg
-*.egg
-
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -120,21 +65,10 @@ wheels/
 *.manifest
 *.spec
 
->>>>>>> 79c4c31d16692e188fb30de92f81f005b5b4f6c0
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-<<<<<<< HEAD
-# VS Studio Code
-.vscode
-
-# PyCharm
-.idea/
-
-# Dropbox
-.dropbox.attr
-=======
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -166,7 +100,6 @@ docs/_build/
 
 # PyBuilder
 target/
->>>>>>> 79c4c31d16692e188fb30de92f81f005b5b4f6c0
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -174,24 +107,16 @@ target/
 # pyenv
 .python-version
 
-<<<<<<< HEAD
-=======
 # celery beat schedule file
 celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
 
->>>>>>> 79c4c31d16692e188fb30de92f81f005b5b4f6c0
 # dotenv
 .env
 
 # virtualenv
-<<<<<<< HEAD
-.venv
-venv/
-ENV/
-=======
 .venv*
 venv*/
 ENV*/
@@ -295,4 +220,3 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
->>>>>>> 79c4c31d16692e188fb30de92f81f005b5b4f6c0
