@@ -1,6 +1,5 @@
 """
-Mask R-CNN
-Configurations and data loading code for MS COCO.
+Mask R-CNN Configurations and data loading code for MS COCO.
 
 Copyright (c) 2017 Matterport, Inc.
 Licensed under the MIT License (see LICENSE for details)
@@ -69,9 +68,10 @@ DEFAULT_DATASET_YEAR = "2014"
 
 
 class CocoConfig(Config):
-    """Configuration for training on MS COCO.
-    Derives from the base Config class and overrides values specific
-    to the COCO dataset.
+    """
+    Configuration for training on MS COCO.
+
+    Derives from the base Config class and overrides values specific to the COCO dataset.
     """
     # Give the configuration a recognizable name
     NAME = "coco"
@@ -94,12 +94,14 @@ class CocoConfig(Config):
 class CocoDataset(utils.Dataset):
     def load_coco(self, dataset_dir, subset, year=DEFAULT_DATASET_YEAR, class_ids=None,
                   class_map=None, return_coco=False, auto_download=False):
-        """Load a subset of the COCO dataset.
+        """
+        Load a subset of the COCO dataset.
+
         dataset_dir: The root directory of the COCO dataset.
         subset: What to load (train, val, minival, valminusminival)
         year: What dataset year to load (2014, 2017) as a string, not an integer
         class_ids: If provided, only loads images that have the given classes.
-        class_map: TODO: Not implemented yet. Supports maping classes from
+        class_map: TODO: Not implemented yet. Supports mapping classes from
             different datasets to the same class ID.
         return_coco: If True, returns the COCO object.
         auto_download: Automatically download and unzip MS-COCO images and annotations
@@ -146,7 +148,9 @@ class CocoDataset(utils.Dataset):
             return coco
 
     def auto_download(self, dataDir, dataType, dataYear):
-        """Download the COCO dataset/annotations if requested.
+        """
+        Download the COCO dataset/annotations if requested.
+
         dataDir: The root directory of the COCO dataset.
         dataType: What to load (train, val, minival, valminusminival)
         dataYear: What dataset year to load (2014, 2017) as a string, not an integer
@@ -218,7 +222,8 @@ class CocoDataset(utils.Dataset):
         print("Will use annotations in " + annFile)
 
     def load_mask(self, image_id):
-        """Load instance masks for the given image.
+        """
+        Load instance masks for the given image.
 
         Different datasets use different ways to store masks. This
         function converts the different mask format to one format
@@ -282,6 +287,7 @@ class CocoDataset(utils.Dataset):
     def annToRLE(self, ann, height, width):
         """
         Convert annotation which can be polygons, uncompressed RLE to RLE.
+
         :return: binary mask (numpy 2D array)
         """
         segm = ann['segmentation']
@@ -301,6 +307,7 @@ class CocoDataset(utils.Dataset):
     def annToMask(self, ann, height, width):
         """
         Convert annotation which can be polygons, uncompressed RLE, or RLE to binary mask.
+
         :return: binary mask (numpy 2D array)
         """
         rle = self.annToRLE(ann, height, width)
@@ -313,7 +320,7 @@ class CocoDataset(utils.Dataset):
 ############################################################
 
 def build_coco_results(dataset, image_ids, rois, class_ids, scores, masks):
-    """Arrange resutls to match COCO specs in http://cocodataset.org/#format
+    """Arrange results to match COCO specs in http://cocodataset.org/#format
     """
     # If no results, return an empty list
     if rois is None:
@@ -340,7 +347,9 @@ def build_coco_results(dataset, image_ids, rois, class_ids, scores, masks):
 
 
 def evaluate_coco(model, dataset, coco, eval_type="bbox", limit=0, image_ids=None):
-    """Runs official COCO evaluation.
+    """
+    Runs official COCO evaluation.
+
     dataset: A Dataset object with valiadtion data
     eval_type: "bbox" or "segm" for bounding box or segmentation evaluation
     limit: if not 0, it's the number of images to use for evaluation
