@@ -99,7 +99,7 @@ class CocoDataset(utils.Dataset):
         subset: What to load (train, val, minival, valminusminival)
         year: What dataset year to load (2014, 2017) as a string, not an integer
         class_ids: If provided, only loads images that have the given classes.
-        class_map: TODO: Not implemented yet. Supports maping classes from
+        class_map: TODO: Not implemented yet. Supports mapping classes from
             different datasets to the same class ID.
         return_coco: If True, returns the COCO object.
         auto_download: Automatically download and unzip MS-COCO images and annotations
@@ -313,7 +313,7 @@ class CocoDataset(utils.Dataset):
 ############################################################
 
 def build_coco_results(dataset, image_ids, rois, class_ids, scores, masks):
-    """Arrange resutls to match COCO specs in http://cocodataset.org/#format
+    """Arrange results to match COCO specs in http://cocodataset.org/#format
     """
     # If no results, return an empty list
     if rois is None:
